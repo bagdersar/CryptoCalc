@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+    <div class="container theme-showcase col-sm-6 col-sm-offset-3" role="main">
+
+    <div class="row">
+        <div>
+
+          <div class="card mt-4">
+
+            <div class="card-header bg-primary">
+              <h3 class="text-white">CryptoCalc</h3>
+            </div>
+
+            <div class="card-body">
+
+              <form method="POST" action="/result">
+                <div class="form-group mt-3">
+                  <label for="amount">Amount:</label>
+                  <input type="text" class="form-control" id="amount" name="amount" value="{{amount}}">
+                </div>
+                <div class="form-group mt-3">
+                  <label for="currency_1">From:</label>
+                  <select id="currency_1" name="currency_1" class="form-control">
+					    <option value="eur" {% if currency_1=='eur' %} selected{% endif %}>Euro</option>
+					    <option value="usd" {% if currency_1=='usd' %} selected{% endif %}>U.S. Dollar</option>
+					    <option value="gbp" {% if currency_1=='gbp' %} selected{% endif %}>British Pound</option>
+					    <option value="btc" {% if currency_1=='btc' %} selected{% endif %}>Bitcoin</option>
+					</select>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="currency_2">To:</label>
+                  <select id="currency_2" name="currency_2" class="form-control">
+					    <option value="usd" {% if currency_2=='usd' %} selected{% endif %}>U.S. Dollar</option>
+					    <option value="eur" {% if currency_2=='eur' %} selected{% endif %}>Euro</option>
+					    <option value="gbp" {% if currency_2=='gbp' %} selected{% endif %}>British Pound</option>
+					    <option value="btc" {% if currency_2=='btc' %} selected{% endif %}>Bitcoin</option>
+					</select>
+				</div>
+				<div class="form-group mt-3">
+                  <label for="result">Result:</label>
+                  <input type="text" class="form-control" id="result" name="result" value="{{formula}} {{currency_2}}">
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Submit</button>
+              </form>
+
+            </div>
+        </div>
+
+	</div>
+	</div>
+
+{% endblock %}

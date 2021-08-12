@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}CryptoCalc{% endblock %}
+
+{% block content %}
+
+
+    <div class="container theme-showcase col-sm-6 col-sm-offset-3" role="main">
+
+    	<div class="row">
+        <div>
+
+          <div class="card mt-4">
+            <div class="card-header bg-primary">
+              <h3 class="text-white">CryptoCalc</h3>
+            </div>
+            <div class="card-body">
+              <form method="POST" action="/result">
+                <div class="form-group mt-3">
+                  <label for="amount">Amount:</label>
+                  <input type="text" class="form-control" id="amount" name="amount" placeholder="1.00" required>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="currency_1">From:</label>
+                  <select id="currency_1" name="currency_1" class="form-control">
+					    <option value="btc">Bitcoin</option>
+					    <option value="usd">U.S. Dollar</option>
+					    <option value="eur">Euro</option>
+					    <option value="gbp">British Pound</option>
+					</select>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="currency_2" >To:</label>
+                  <select id="currency_2" name="currency_2" class="form-control">
+					    <option value="usd">U.S. Dollar</option>
+					    <option value="eur">Euro</option>
+					    <option value="gbp"> British Pound</option>
+					    <option value="btc">Bitcoin</option>
+					</select>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Submit</button>
+              </form>
+          </div>
+        </div>
+      </div>
+	</div>
+
+
+{% endblock %}
